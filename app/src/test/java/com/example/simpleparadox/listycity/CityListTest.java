@@ -13,19 +13,18 @@ class CityListTest {
         return cityList;
     }
 
-    private City mockCity() {
-        return new City("Edmonton", "Alberta");
-    }
 
-    @Test
-    void testAdd() {
-        CityList cityList = mockCityList();
+        private City mockCity () {
+            return new City("Edmonton", "Alberta");
+        }
 
-        assertEquals(1, cityList.countCities());
+        @Test
+        public void doubleCountAssertion () {
+            CityList cityList = mockCityList();
 
-        cityList.add(new City("Regina", "Saskatchewan"));
+            cityList.add(new City("Regina", "Saskatchewan"));
 
-        assertEquals(2, cityList.countCities());
-        assertTrue(cityList.hasCity(new City("Regina", "Saskatchewan")));
-    }
+            assertEquals(4, cityList.countDoubleCities());
+        }
 }
+
